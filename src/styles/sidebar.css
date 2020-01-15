@@ -1,0 +1,100 @@
+#app {
+  max-width: 1200;
+  margin: 0 auto;
+  padding: 60px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#app main {
+    margin-left: 30px;
+}
+
+aside {
+    width: 320px;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 30px 20px;
+}
+
+aside strong{
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    color: #333;
+
+}
+
+aside form{
+    margin-top: 30px;
+}
+
+aside form .input-block +.input-block {
+    margin-top: 20px;
+}
+
+aside form .input-block label{
+    color: #acacac;
+    font-size: 14px;
+    display: block;
+    font-weight: bold;
+}
+
+aside form .input-block input{
+    width: 100%;
+    height: 32px;
+    color: #666;
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid #eee;
+}
+
+aside form .input-group {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+aside form .input-group .input-block{
+    margin-top: 0;
+}
+
+aside form button[type=submit]{
+    width: 100%;
+    border: 0;
+    margin-top: 30px;
+    background-color: #7d40e7;
+    border-radius: 2px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+aside form button[type=submit]:hover{
+    background: #6931ca;
+}
+
+@media (max-width:1000px){
+    #app {
+        flex-direction: column;   
+    }
+    #app main{
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    #app aside{
+        width: 100%;
+    }
+}
+
+@media(max-width: 650px){
+    main ul {
+        grid-template-columns: 1fr;
+    }
+}
