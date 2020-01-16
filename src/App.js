@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./styles/global.css"
 import "./styles/sidebar.css"
 import "./styles/main.css"
-import axios from 'axios'
+import api from './services/api'
 import DevItem from './components/DevItem'
 import DevForm from './components/DevForm'
 
@@ -10,13 +10,14 @@ function App() {
   const [devs, setDevs] = useState([])
 
   async function handleAddDev(data) {
-    const response = await axios.post('http://localhost:3333/devs', data)
+    const response = await api.post('/devs', data)
     setDevs([...devs, response.data])
   }
 
   useEffect(() => {
     async function loadDevs() {
-      const response = await axios.get('http://localhost:3333/devs')
+      const response = await api.get('/devs')
+      console.log(response.data)
       setDevs(response.data)
     }
     loadDevs()
